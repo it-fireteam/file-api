@@ -18,10 +18,15 @@ repositories {
 	mavenCentral()
 }
 
+bootJar {
+	mainClassName = 'it.fireteam.fileapi.FileApiApplication'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compile group:  'io.springfox', name:'springfox-swagger2', version: '2.7.0'
 	compile group:  'io.springfox', name:'springfox-swagger-ui', version: '2.7.0'
+	compile group:  'org.zalando', name: 'logbook-spring-boot-starter', version: '1.13.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {

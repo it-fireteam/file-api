@@ -7,3 +7,27 @@ spring:
   application:
     name: file-api
 
+logging:
+  file:
+    name: c:/tmp/logs/app.log
+  level:
+    org.zalando.logbook: TRACE
+    org.springframework:
+      jdbc.core: INFO
+      test: INFO
+    com.zaxxer.hikari: INFO
+    root: INFO
+logbook:
+  exclude:
+    - //actuator/
+    - //swagger
+    - //csrf
+    - //v2/
+    - //webjars/
+    - //
+  filter.enabled: true
+  secure-filter.enabled: true
+  format.style: json
+  strategy: default
+  minimum-status: 400
+
